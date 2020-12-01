@@ -1,0 +1,13 @@
+body.review {
+    background-image: url('../images/background_review.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vh;
+    height: 100vh;
+}
+.img-review {
+    height: 160px !important;
+    width: 140px !important;
+    position:fixed;
+}

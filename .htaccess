@@ -1,10 +1,16 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
 
     RewriteEngine On
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteCond %{REQUEST_URI} !.(css|gif|ico|jpg|js|png|svg|ttf|woff|woff2|map)$
+    RewriteCond %{REQUEST_FILENAME} !/index\.php$
     RewriteRule ^(.+)$ index.php?url=$1
 
 </IfModule>
