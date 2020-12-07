@@ -1,7 +1,7 @@
 <?php
 	define('SCHEME'				, (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http') . '://');
 	// Local host
-	define('HOST_NAME'		    , $_SERVER['HTTP_HOST'] . '/php_mvc');    		//
+	define('HOST_NAME'		    , $_SERVER['HTTP_HOST'] . '/LEP');    		//
 	define('BASE_NAME'			, SCHEME . HOST_NAME. DS);               		    // http://localhost
 	define('PATH_URL'			, SCHEME. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 	

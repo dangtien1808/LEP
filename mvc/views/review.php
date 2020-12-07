@@ -16,20 +16,12 @@
         <script src='<?= PATH_PUBLIC ?>plugins/js/dropzone.js'></script>
     </head>
     <body class="review">
-        <?php
-            $html = [];
-            foreach ($images as $image) {
-                // array_push($html,   '<div class="card">');
-                array_push($html,       '<img src="'. PATH_PUBLIC . $image['image_path'] .'" class="img-thumbnail img-review" alt="'.$image['name'].'">');
-                // array_push($html,   '</div>');
-            }
-            echo join('', $html);
-        ?>
     </body>
 
     <script type="text/javascript">
         var url_images_fetch = '<?= BASE_NAME . 'images/fetch'?>';
         var url_images_delete = '<?= BASE_NAME . 'images/delete'?>';
+        var url_store = '<?= PATH_PUBLIC ?>';
     </script>
     <script src='<?= PATH_PUBLIC ?>js/review.js'></script>
 </html>

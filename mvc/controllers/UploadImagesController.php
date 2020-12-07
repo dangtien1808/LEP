@@ -15,8 +15,11 @@ class UploadImagesController extends Controller{
 
     public function fetch($params)
     {
-        $images = $this->_imagesModel->getAll();
-        echo $this->view('list_images', ['items' => $images]);
+        $data = [];
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = $this->_imagesModel->getAll();
+        }
+        return $this->_responsive->success($data);
     }
 
     public function upload($params)

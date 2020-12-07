@@ -7,7 +7,7 @@ class ImagesModel extends Model{
     }
 
     public function getAll(){
-        return $this->query()->fetchAll();
+        return $this->query()->limit(0,3)->fetchAll();
     }
     public function addImages($params){
         return $this->query([
