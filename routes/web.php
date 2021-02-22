@@ -14,10 +14,7 @@ use App\Http\Controllers\DropzoneController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [DropzoneController::class, 'index']);
 
 Route::get('upload', [DropzoneController::class, 'index']);
 Route::get('upload/fetch', [DropzoneController::class, 'fetch'])->name('upload.fetch');
