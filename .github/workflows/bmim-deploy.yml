@@ -1,0 +1,17 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: bmim-hosted
+
+    steps:
+      - name: Deploy
+        run: /home/tien_dang/run_deploy.sh staging
+        shell: bash
