@@ -12,6 +12,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: set permission deploy.sh
+        run: chmod -R 777 /home/data/deploy/deploy.sh
+        shell: bash
+      - name: set permission run_deploy.sh
+        run: chmod -R 777 /home/bmim-user/run_deploy.sh
+        shell: bash
       - name: Deploy host
         run: sudo sh /home/data/deploy/deploy.sh
         shell: bash
