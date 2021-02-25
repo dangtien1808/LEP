@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: bmim-hosted
+    runs-on: self-hosted
 
     steps:
       - name: Deploy
