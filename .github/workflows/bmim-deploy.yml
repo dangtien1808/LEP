@@ -12,6 +12,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Deploy
-        run: /home/tien_dang/run_deploy.sh
+      - name: Deploy host
+        run: sudo sh /home/data/deploy/deploy.sh
+        shell: bash
+      - name: Deploy server
+        run: /home/bmim-user/run_deploy.sh
         shell: bash
