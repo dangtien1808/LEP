@@ -14,7 +14,7 @@ use App\Http\Controllers\DropzoneController;
 |
 */
 
-:Route::get('/', function(){
+Route::get('/', function(){
    return view('welcome');
 });
 //Route::get('/', [DropzoneController::class, 'index']); 
