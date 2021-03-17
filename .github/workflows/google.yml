@@ -23,7 +23,7 @@ env:
   GKE_CLUSTER: cluster-1    # TODO: update to cluster name
   GKE_ZONE: asia-southeast1-b   # TODO: update to cluster zone
   DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
-  IMAGE: static-site
+  IMAGE: nginx-1
 
 jobs:
   setup-build-publish-deploy:
@@ -47,20 +47,22 @@ jobs:
         gcloud --quiet auth configure-docker
 
     # Get the GKE credentials so we can deploy to the cluster
-
+    # Build the Docker image
+    - name: Build
+      run: ls
     # Build the Docker image
     - name: Build
       run: |-
         docker build \
-          --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
-          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --tag "gcr.io/$PROJECT_ID/$IMAGE:$demo" \
+          --build-arg demo="demo" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$demo"
 
     # Set up kustomize
     - name: Set up Kustomize
