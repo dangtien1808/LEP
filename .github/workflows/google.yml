@@ -15,7 +15,9 @@ name: Build and Deploy to GKE
 on:
   release:
     types: [created]
-
+  push:
+      branches:
+        - master
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: cluster-1    # TODO: update to cluster name
